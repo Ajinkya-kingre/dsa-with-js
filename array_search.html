@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Searching in Array</title>
+    <script>
+      // Searching Manually
+      //  let arr = [90, 65, 54, 33, 25, 6, 4, 32];
+      // let item = 33;
+      //   let index = undefined;
+      //   for (let i = 0; i < arr.length; i++) {
+      //     console.log(arr[i]);
+      //     if (arr[i] === item) {
+      //       index = i;
+      //          break;
+      //     }
+      //   }
+      //   console.log(`Index of given Item is ${index}`);
+
+      //     Serching dynamically
+      function searchEl() {
+        let arr = [90, 65, 54, 33, 25, 6, 4, 32];
+        let item = document.getElementById("item").value;
+        // parsing cuz strict compare at line 29
+        item = parseInt(item);
+        let index = undefined;
+
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] === item) {
+            index = i;
+            break;
+          }
+        }
+        console.log(`Index of given Item is ${index}`);
+      }
+      // console.log(arr.indexOf(item)); (for default searching by index)
+      // arr.splice(3,1); (for default deletion)
+      // console.log(arr); (for default deletion)
+    </script>
+  </head>
+  <body>
+    <input type="text" id="item" placeholder="Enter the value" />
+    <button onclick="searchEl()">search</button>
+  </body>
+</html>

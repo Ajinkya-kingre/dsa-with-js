@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inset Array</title>
+    <script>
+      //insert manually
+      //   let arr = [20, 4, 5, 75, 77, 45, 65];
+      //   let el = 900;
+      //   let pos = 4;
+      //   console.log(arr);
+      //   for (let i = arr.length - 1; i >= 0; i--) {
+      //     if (i >= pos) {
+      //       arr[i + 1] = arr[i];
+      //       if (i == pos) {
+      //         arr[i] = el;
+      //       }
+      //     }
+      //   }
+      //   console.log(arr);
+      function insertEl() {
+        let arr = [20, 4, 5, 75, 77, 45, 65];
+        let el = document.getElementById("el").value;
+        el = parseInt(el);
+        let pos = document.getElementById("pos").value;
+        console.log(arr);
+        for (let i = arr.length - 1; i >= 0; i--) {
+          if (i >= pos) {
+            arr[i + 1] = arr[i];
+            if (i == pos) {
+              arr[i] = el;
+            }
+          }
+        }
+        console.log(arr);
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="pos" placeholder="Enter the position" />
+    <input type="text" id="el" placeholder="Enter the number" />
+    <button onclick="insertEl()">Insert</button>
+  </body>
+</html>

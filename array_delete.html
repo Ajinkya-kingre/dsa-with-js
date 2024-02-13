@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deletion in Array</title>
+    <script>
+      // (Deletion manuallay)
+      //   let arr = [10, 3, 45, 6, 4, 3, 2, 654, 32, 55];
+      //   let pos = 5;
+      //  ( only using < not the <=  don't forget this)
+      //  (can be written like this:- for (let i = pos; i < arr.length-1; i++))
+      //   for (let i = pos; i <= arr.length - 2; i++) {
+      //     arr[i] = arr[i + 1];
+      //   }
+      //   arr.length = arr.length - 1;
+      //   console.log(arr);
+
+      //   Deletion Dynamically
+      function deleteEl() {
+        let arr = [10, 3, 45, 6, 4, 3, 2, 654, 32, 55];
+        let pos = document.getElementById("pos").value;
+        pos = parseInt(pos);
+        console.log(arr);
+        for (let i = pos; i < arr.length - 1; i++) {
+          arr[i] = arr[i + 1];
+        }
+        arr.length = arr.length - 1;
+        console.log(arr);
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="pos" placeholder="Enter the position" />
+    <button onclick="deleteEl()">Delete</button>
+  </body>
+</html>
