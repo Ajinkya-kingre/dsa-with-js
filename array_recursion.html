@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion</title>
+  </head>
+  <body>
+    <script>
+       //   function tt(getData) {
+       //     console.log(getData);
+       //     if (getData < 10) {
+       //       tt(getData + 1);
+       //     }
+       //   }
+       //   let data = 1;
+       //   tt(data);
+
+
+
+       function factorial(x){
+         if(x == 0){
+             return 1
+         }
+         return x * factorial(x-1);
+       }
+       let data= 5;
+      console.log(factorial(data))
+    </script>
+  </body>
+</html>
