@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Head and Tail Recursion</title>
+  </head>
+  <body>
+    <script>
+      // used this function to understand the Debuggers and the calls stack
+      //   function color() {
+      //     let data = 100;
+      //     console.log(data);
+      //     if(true){
+      //         console.log(data*100)
+      //     }else{
+      //         console.log(data/100)
+      //     }
+      //   }
+      //   function days() {
+      //     color();
+      //   }
+      //   function fruits() {
+      //     days();
+      //   }
+      //   function topfunction() {
+      //     fruits();
+      //   }
+      //   topfunction();
+
+      // Head Recursion
+      function head(x) {
+        console.log(x);
+        if (x > 0) {
+          head(x - 1);
+        }
+      }
+      let data = 5;
+        head(data);
+
+      // Tail Recursion
+      function tail(x) {
+        if (x > 0) {
+          tail(x - 1);
+        }
+        console.log(x);
+      }
+
+      tail(data);
+    </script>
+  </body>
+  <h1>Head and Tail Recursion</h1>
+</html>
