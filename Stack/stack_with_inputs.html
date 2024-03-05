@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack with inputs</title>
+    <script>
+      let data = [];
+      let currSize = 0;
+      let max = 5;
+
+      function push() {
+        let newVal = document.getElementById("tt").value;
+        if (currSize >= max) {
+          alert("stack is full can't add" + " " + newVal);
+        } else {
+          data[currSize] = newVal;
+          currSize++;
+          document.getElementById("tt").value = "";
+          console.log("Element added!!");
+        }
+      }
+
+      function pop() {
+        if (currSize > 0) {
+          currSize--;
+          data.length = currSize;
+          console.log("Element removed!!");
+        } else {
+          alert("Stack is already empty!!");
+        }
+      }
+
+      function display() {
+        if (currSize === 0) {
+          console.log("Stack is empty, please add the values");
+        }
+        for (let i = 0; i <= currSize - 1; i++) {
+          console.log("element no. is", i, "and the value is", data[i]);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="Enter the Stack Element" id="tt" />
+    <button onclick="push()">Add to Stack</button>
+    <button onclick="pop()">Remove form Stack</button>
+    <button onclick="display()">Display the Stack</button>
+  </body>
+</html>
