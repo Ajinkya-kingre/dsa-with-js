@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse string in stack</title>
+    <script>
+      class Stack {
+        data = [];
+        currSize;
+        constructor() {
+          this.currSize = this.data.length;
+        }
+
+        push(newVal) {
+          this.data[this.currSize] = newVal;
+          this.currSize++;
+        }
+
+        pop() {
+          if (this.currSize === 0) {
+            return console.log("stack is already empty");
+          } else {
+            let lastItemRemoved = this.data[this.currSize - 1];
+            this.currSize--;
+            this.data.length = this.currSize;
+            return lastItemRemoved;
+          }
+        }
+
+        display() {
+          console.log(this.data);
+        }
+
+        reverse(item) {
+          for (let i = 0; i < item.length; i++) {
+            this.push(item[i]);
+          }
+          for (let i = 0; i < item.length; i++) {
+            // console.log(this.pop())
+            item[i] = this.pop();
+          }
+        }
+      }
+      let stack1 = new Stack();
+      let str = "ajinkya";
+      str = str.split("");
+      stack1.reverse(str);
+      console.log(str);
+      console.log(stack1.data);
+    </script>
+  </head>
+  <body>
+    <h1>Reverse a String in Stack using Class (Javascript)</h1>
+  </body>
+</html>
