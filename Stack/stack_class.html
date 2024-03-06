@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staack with class</title>
+    <script>
+      class Stack {
+        item = [];
+        currSize;
+        maxSize;
+        constructor(size) {
+          //   console.log("call");
+          this.maxSize = size;
+          this.currSize = this.item.length;
+        }
+
+        push(newVal) {
+          if (this.currSize >= this.maxSize) {
+            alert("Stack is full");
+          } else {
+            this.item[this.currSize] = newVal;
+            this.currSize++;
+            console.log("element is added");
+          }
+        }
+        pop() {
+          if ((this.currSize === 0)) {
+            alert("Stack is already empty");
+          } else {
+            this.currSize--;
+            this.item.length = this.currSize;
+            console.log("element is removed");
+          }
+        }
+        display() {
+          console.log(this.item);
+        }
+      }
+
+      let stack1 = new Stack(5);
+      //   stack1.push(90);
+      //   stack1.display();
+    </script>
+  </head>
+  <body>
+    <h1>Stack with class in javascript</h1>
+  </body>
+</html>
