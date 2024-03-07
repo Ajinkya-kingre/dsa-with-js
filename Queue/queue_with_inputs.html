@@ -9,13 +9,16 @@
       let currSize = queue.length;
       let maxSize = 5;
 
-      function enqueue(newVal) {
+      function enqueue() {
+        let newVal0 = document.getElementById("el").value;
+        let newVal = parseInt(newVal0);
         if (currSize >= maxSize) {
           alert("Queue is already full!");
         } else {
           queue[currSize] = newVal;
           currSize++;
           console.log("Element is Added!");
+          document.getElementById("el").value = "";
         }
       }
 
@@ -59,17 +62,15 @@
           return false;
         }
       }
-
-      // enqueue(10);
-      // enqueue(20);
-      // enqueue(30);
-      // enqueue(40);
-      // enqueue(50);
-
-      display();
     </script>
   </head>
   <body>
-    <h1>Queue in Javascript</h1>
+    <h1>Queue with Inputs in Javascript</h1>
+    <input type="text" placeholder="Enter Element" id="el" />
+    <button onclick="enqueue()">Add Element</button>
+    <button onclick="dequeue()">Remove Element</button>
+    <button onclick="display()">Display the Queue</button>
+    <button onclick="front()">Get Front Elemment</button>
+    <button onclick="rear()">Get Rear Element</button>
   </body>
 </html>
