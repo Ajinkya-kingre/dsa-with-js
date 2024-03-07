@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Circular Queue</title>
+    <script>
+      //   class Queue {
+      //     constructor(size) {
+      //       this.maxSize = size;
+      //       this.item = new Array(this.maxSize);
+      //       this.currSize = 0;
+      //       this.rear = -1;
+      //       this.front = -1;
+      //     }
+
+      //     enqueue(newVal) {
+      //       if (this.currSize != this.maxSize) {
+      //         if(this.rear == this.maxSize-1){
+      //             this.rear = 0;
+      //         }else{
+      //             this.rear++;
+      //         }
+
+      //         this.item[this.rear] = newVal;
+      //         this.currSize++;
+      //         if (this.front == -1) {
+      //           this.front = this.rear;
+      //         }
+      //       }
+      //     }
+
+      //     dequeue(){
+      //         if(this.currSize != 0){
+      //             this.item[this.front] = null;
+      //             if(this.front == this.maxSize-1){
+      //                 this.front = 0;
+      //             }else{
+      //                 this.front++;
+      //             }
+      //             this.currSize--
+      //         }else{
+      //             this.rear = -1;
+      //             this.front = -1;
+      //             alert("stack is empty")
+      //         }
+      //     }
+      //   }
+
+      class Queue {
+        constructor(size) {
+          this.maxSize = size;
+          this.item = new Array(size);
+          this.currSize = 0;
+          this.rear = -1;
+          this.front = -1;
+        }
+
+        enqueue(newVal) {
+          if (this.currSize != this.maxSize) {
+            if (this.rear == this.maxSize - 1) {
+              this.rear = 0;
+            } else {
+              this.rear++;
+            }
+
+            this.item[this.rear] = newVal;
+            this.currSize++;
+            if (this.front == -1) {
+              this.front = this.rear;
+            }
+          } else {
+            alert("stack is full");
+          }
+        }
+
+        dequeue() {
+          if (this.currSize != 0) {
+            this.item[this.front] = null;
+            if (this.front == this.maxSize - 1) {
+              this.front = 0;
+            } else {
+              this.front++;
+            }
+            this.currSize--;
+          } else {
+            this.rear = -1;
+            this.front = -1;
+            alert("queue is already empty");
+          }
+        }
+      }
+
+      let queue = new Queue(5);
+      queue.enqueue(10);
+      queue.enqueue(20);
+      queue.enqueue(30);
+      queue.enqueue(40);
+      queue.enqueue(50);
+      //   queue.dequeue();
+    </script>
+  </head>
+  <body>
+    <h1>Circular Queue in Javascript</h1>
+  </body>
+</html>
