@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Binary-Search</title>
+    <script>
+      let data = [2, 3, 5, 10, 60,90,100,10000,20000];
+      let find = 20000;
+      let start = 0;
+      let end = data.length - 1;
+      let pos = undefined;
+
+      while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+        // console.log(data[mid]);
+        if (data[mid] === find) {
+          pos = mid;
+          break;
+        } else if (data[mid] < find) {
+          start = mid + 1;
+        } else {
+          end = mid - 1;
+        }
+      }
+
+      console.log("position: " + pos, ", element: " + data[pos]);
+    </script>
+  </head>
+  <body>
+    <h1>Binary Search In JavaScript</h1>
+  </body>
+</html>
