@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selection Sort</title>
+    <script>
+      let item = [23, 54, 3, 2, 4, 5, 34, 35, 200];
+      //    METHOD 1
+      //   function selectionSort(data) {
+      //     let maxVal;
+      //     for (let i = data.length - 1; i >= 0; i--) {
+      //       maxVal = i;
+      //       for (let j = i - 1; j >= 0; j--) {
+      //         if (data[j] < data[maxVal]) {
+      //           maxVal = j;
+      //         }
+      //       }
+      //       let temp = data[maxVal];
+      //       data[maxVal] = data[i];
+      //       data[i] = temp;
+      //     }
+      //   }
+
+      // METHOD 2
+      function selectionSort(item) {
+        // console.log(item);
+        let minVal;
+        for (let i = 0; i < item.length; i++) {
+          minVal = i;
+          for (j = i + 1; j < item.length; j++) {
+            if (item[j] > item[minVal]) {
+              minVal = j;
+            }
+          }
+          let temp = item[minVal];
+          item[minVal] = item[i];
+          item[i] = temp;
+        }
+      }
+
+      selectionSort(item);
+      console.log(item);
+    </script>
+  </head>
+  <body>
+    <h1>Selection Sort Descending Order In javaScript</h1>
+  </body>
+</html>

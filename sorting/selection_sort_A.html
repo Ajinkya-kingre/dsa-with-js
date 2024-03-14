@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selction Sort</title>
+    <script>
+      let data = [32, 54, 7, 3, 23, 65, 34, 224];
+
+      function selectionSort(item) {
+        // console.log(item);
+        let minVal;
+        for (let i = 0; i < item.length; i++) {
+          minVal = i;
+          for (j = i + 1; j < item.length; j++) {
+            if (item[j] < item[minVal]) {
+              minVal = j;
+            }
+          }
+          let temp = item[minVal];
+          item[minVal] = item[i];
+          item[i] = temp;
+        }
+      }
+
+      selectionSort(data);
+      console.log(data);
+    </script>
+  </head>
+  <body>
+    <h1>Selection sort Ascending in JavaScript</h1>
+  </body>
+</html>
