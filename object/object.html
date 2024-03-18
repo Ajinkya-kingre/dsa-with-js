@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object</title>
+    <script>
+      let data = {
+        name: "ajinkya",
+        age: 20,
+        mail: "pp@gamil.com",
+        getname: function () {
+          return this.name;
+        },
+      };
+      data.contact = 909090;
+      delete data.name;
+      data.name = "pp";
+        // console.log(data.getname());
+
+      //   for (i in data) {
+      //     console.log(data[i]);
+      //   }
+
+      //   console.log(Object.keys(data));
+      // console.log(Object.values(data));
+        console.log(Object.entries(data));
+    </script>
+  </head>
+  <body>
+    <h1>Object in JavaScript</h1>
+  </body>
+</html>
